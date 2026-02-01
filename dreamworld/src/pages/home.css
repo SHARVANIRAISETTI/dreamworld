@@ -1,0 +1,69 @@
+/* Horizontal scroll for all sections */
+.horizontal-scroll {
+  display: flex;
+  overflow-x: auto;
+  padding: 10px 0;
+  gap: 15px;
+}
+
+.horizontal-scroll::-webkit-scrollbar {
+  height: 8px;
+}
+
+.horizontal-scroll::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 4px;
+}
+
+.horizontal-scroll::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.horizontal-scroll > * {
+  flex: 0 0 auto; /* Prevent shrinking */
+}
+.card {
+  width: 200px;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card img {
+  height: 200px;
+  object-fit: cover;
+}
+
+/* Mobile: shrink card width */
+@media (max-width: 992px) {
+  .card {
+    width: 160px;
+  }
+  .card img {
+    height: 160px;
+  }
+}
+
+@media (max-width: 576px) {
+  .card {
+    width: 130px;
+  }
+  .card img {
+    height: 130px;
+  }
+  .card-title {
+    font-size: 0.85rem;
+  }
+  .card-text {
+    font-size: 0.8rem;
+  }
+  .btn {
+    font-size: 0.75rem;
+    padding: 0.25rem 0.5rem;
+  }
+}
+
